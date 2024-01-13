@@ -1,0 +1,24 @@
+TC ID;Scenario Type;Scenario Requirement;Test Case Name;Precondition;Step to Reproduce;Test Data;Expected Result;Environment;Attachment File
+CI-001;Positive;Functional;Verify item page content;"1. User already login
+2. Open items page";1. Check the UI then compared with the product design document and software design document;;Ensure all the UI are displayed and match with the requirement;dev;
+CI-002;Positive;Functional;Verify add one item to cart;"1. User already login
+2. Open items page";"1. Click on the ""add item"" button from a selected item";;"Ensure the total selected item should show  ""1"" in cart with details of the item";dev;
+CI-003;Positive;Functional;Verify add multiple item to cart;"1. User already login
+2. Open items page";"1. Click on the ""add item"" button from a selected item
+2. Click on the ""+"" button as much as the total items user need";;"1. Ensure the total item of the selected item should show the ""expected number"" in cart with details of the item 
+2. Ensure the message are displayed ""Item has been added to your cart""";dev;
+CI-004;Negative;Functional;Verify add item to cart exceed than the available stock;"1. User already login
+2. Open items page";"1. Click on the ""add item"" button from a selected item more than the available stock";;"1. Ensure the total selected item should show  the ""expected number"" in cart with details of the item
+2. Ensure that was not able to increase the quantity to more than the available stock";dev;
+CI-005;Positive;Functional;Verify edit total items by decrease the quantity at least 1;"1. User already login
+2. Open items page
+3. More than 2 items are selected";"1. Click on the ""-"" button from a selected item";;"1. Ensure the total item of the selected item should show the ""expected number"" in cart with details of the item 
+2. Ensure the message are displayed ""Total has been updated""";dev;
+CI-006;Positive;Functional;Verify edit total items to zero;"1. User already login
+2. Open items page
+3. More than 1 items are selected";"1. Click on the ""-"" button until the total items showing ""0"" number";;Ensure the selected item and the total item should be removed from the cart;dev;
+CI-007;Negative;Functional;Verify edit total items by decrease the quantity less than 0;"1. User already login
+2. Open items page
+3. More than 1 items are selected";"1. Click on the ""-"" button until the total items showing ""0"" number
+2. Click on the ""-"" button again";;"1. Ensure that was not able to decrease the quantity to less than 0 
+2. Ensure the selected item and the total item should be removed from the cart";dev;
