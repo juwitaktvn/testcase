@@ -1,0 +1,24 @@
+TC ID,Scenario Type,Scenario Requirement,Test Case Name,Precondition,Step to Reproduce,Test Data,Expected Result,Environment,Attachment File
+LG-001,Positive,Functional,Verify login page content,1. Open the login page,1. Check the UI then compared with the product design document and software design document,,Ensure all the UI are displayed and match with the requirement,dev,
+LG-002,Negative,Functional,Validate input invalid > Email,1. Open the login page,"1. Input test data in email and password field
+2. Click on the ""Login"" button","myself_unregistered@gmail.com
+<right_password>","Ensure the error message is displayed
+""We couldn't find your email account""",dev,
+LG-003,Negative,Functional,Validate input invalid > Password,1. Open the login page,"1. Input test data in email and password field
+2. Click on the ""Login"" button","myself@gmail.com
+<wrong_password>","Ensure the error message is displayed
+""Your password is incorect. Please try again""",dev,
+LG-004,Negative,Functional,Validate that the system restricts login attempts while input invalid email and password over 5 times > Email & Password,1. Open the login page,"1. Input test data in email and password field
+2. Click on the ""Login"" button 
+3. Repeat the step 1 and 2 in four times","myself_unregistered@gmail.com
+<wrong_password>","Ensure the error message is displayed
+""You have attempted to login in five or more times with an incorect email and password combination""",dev,
+LG-005,Negative,Functional,Validate input inactive credential > Email,1. Open the login page,"1. Input test data in email and password field
+2. Click on the ""Login"" button",myself_inactive@gmail.com,"Ensure the error message is displayed
+""Sorry, your account  is inactive. Please contact our support team""",dev,
+LG-006,Negative,Functional,Verify login without filling all the mandatory fields,1. Open the login page,"1. Input test data in email and password field
+2. Click on the ""Login"" button",""" ""","Ensure the error message are displayed
+""Please enter your email and password""",dev,
+LG-007,Positive,Functional,Verfiy user able to login with the valid data,1. Open the login page,"1. Input test data in email and password field
+2. Click on the ""Login"" button","myself@gmail.com
+<right_password>",User be able to login with a valid data and redirect to home page,dev,
