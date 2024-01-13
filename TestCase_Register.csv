@@ -1,0 +1,28 @@
+TC ID;Scenario Type;Scenario Requirement;Test Case Name;Precondition;Step to Reproduce;Test Data;Expected Result;Environment;Attachment File
+RG-001;Positive;Functional;Verify register page content;1. Open the register page;1. Check the UI then compared with the product design document and software design document;;Ensure all the UI are displayed and match with the requirement;dev;
+RG-002;Negative;Functional;Validate input restriction > Name;1. Open the register page;1. Input test data in name field;myselffffffffffffffffffffffffffffffffffffffffffffffffff;"Ensure the error message is displayed
+""Name must between be 8 and 22 characters""";dev;
+RG-003;Negative;Functional;Validate input restriction > Phone Number;1. Open the register page;1. Input test data in phone number field;08123456789123456789123456789;"Ensure the error message is displayed
+""Phone Number must be between 11 and 13 numbers""";dev;
+RG-004;Negative;Functional;Validate input restriction > Password;1. Open the register page;1. Input test data in name field;<passwordddddddddddddddddddddddddddd>;"Ensure the error message is displayed
+""Name must between be 8 and 22 characters""";dev;
+RG-005;Negative;Functional;Validate input invalid > Email;1. Open the register page;1. Input test data in email field;"1. myself_registeredgmail.com
+2. myself@gmailcom
+3. myselfgmailcom";"Ensure the error message is displayed
+""Email is invalid"" or ""Invalid email address format""";dev;
+RG-006;Negative;Functional;Validate input invalid > Phone Number;1. Open the register page;1. Input test data in phone number field;"1. (+62) 812345678910
+2. 08
+3. my number=0812345678910";"Ensure the error message is displayed
+""Phone number is invalid"" or ""Phone number must contain only number""";dev;
+RG-007;Negative;Functional;Validate input inactive credential > Email;1. Open the register page;"1. Input test data in email field
+2. Input the other mandatory field
+3. Click on the ""Register"" button";myself_inactive@gmail.com;"Ensure the error message is displayed
+""Sorry, your account  is inactive. Please contact our support team""";dev;
+RG-008;Negative;Functional;Verify login without filling all the mandatory fields;1. Open the register page;"1. Input test data in mandatory field
+2. Click on the ""Register"" button";""" """;"Ensure the error message are displayed
+""Please fill all required field""";dev;
+RG-009;Positive;Functional;Verfiy user able to register with the valid data;1. Open the register page;"1. Input all test data in the field
+2. Click on the ""Register"" button";"1. Juwitaok
+2. 0812345678910
+3. myself@gmail.com
+4. mypwd123";User be able to login with a valid data and redirect to home page;dev;
